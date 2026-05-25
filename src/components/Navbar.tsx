@@ -27,7 +27,7 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-background/95 backdrop-blur-md shadow-lg border-b border-border/30"
+          ? "bg-background/95 backdrop-blur-md shadow-lg border-b border-white/10"
           : "bg-transparent"
       }`}
     >
@@ -37,7 +37,7 @@ export default function Navbar() {
             <span className="text-white font-black text-lg">C</span>
           </div>
           <div className="flex flex-col leading-tight">
-            <span className="font-black text-heading text-base tracking-tight">Careful Carry</span>
+            <span className="font-black text-white text-base tracking-tight">Careful Carry</span>
             <span className="text-primary text-xs font-bold uppercase tracking-widest">Removals</span>
           </div>
         </a>
@@ -47,7 +47,7 @@ export default function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              className="relative text-sm font-bold text-foreground/70 hover:text-primary transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+              className="relative text-sm font-bold text-white/80 hover:text-white transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
             >
               {link.label}
             </a>
@@ -57,7 +57,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           <a
             href="tel:0234567891"
-            className="flex items-center gap-2 text-sm font-bold text-heading hover:text-primary transition-colors duration-300"
+            className="flex items-center gap-2 text-sm font-bold text-white hover:text-primary transition-colors duration-300"
           >
             <Phone size={16} className="text-primary" />
             0234 567 891
@@ -71,7 +71,7 @@ export default function Navbar() {
         </div>
 
         <button
-          className="md:hidden p-2 rounded-xl hover:bg-muted transition-colors duration-200"
+          className="md:hidden p-2 rounded-xl text-white hover:text-primary transition-colors duration-200"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -85,7 +85,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-background/98 backdrop-blur-md border-t border-border/30 overflow-hidden"
+            className="md:hidden bg-background/98 backdrop-blur-md border-t border-white/10 overflow-hidden"
           >
             <div className="px-6 py-6 flex flex-col gap-4">
               {links.map((link) => (
@@ -93,7 +93,7 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="text-base font-bold text-foreground/70 hover:text-primary transition-colors duration-200"
+                  className="text-base font-bold text-white/80 hover:text-white transition-colors duration-200"
                 >
                   {link.label}
                 </a>
